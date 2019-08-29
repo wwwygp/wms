@@ -1,0 +1,108 @@
+$fontSize: 12px !important;
+$lineHeight: 1.42857143 !important;
+$blueColor: #3c8dbc !important;
+$redColor: #dd6161 !important;
+$greenColor: #00a65a !important;
+$delColor: #dd6161 !important;
+$whbiteColor: #ffffff !important;
+$whiteBorder: #D9D9D9 !important;
+$radius: 3px;
+.add ,.edit {
+  background:$blueColor;
+  font-size: $fontSize;
+  line-height:$lineHeight;
+  border-radius: $radius;
+}
+.delete {
+  background:$delColor;
+  font-size: $fontSize;
+  line-height:$lineHeight;
+  border-radius: $radius;
+}
+.locked ,.unlocked {
+  background:$greenColor;
+  font-size: $fontSize;
+  line-height:$lineHeight;
+  border-radius: $radius;
+}
+
+.green{
+  background:$greenColor;
+  font-size: $fontSize;
+  line-height:$lineHeight;
+  border-radius: $radius;
+}
+.red{
+  background:$redColor;
+  font-size: $fontSize;
+  line-height:$lineHeight;
+  border-radius: $radius;
+}
+.blue {
+  background:$blueColor;
+  font-size: $fontSize;
+  line-height:$lineHeight;
+  border-radius: $radius;
+}
+.white {
+  background:$whbiteColor;
+  font-size: $fontSize;
+  line-height:$lineHeight;
+  border-radius: $radius;
+  color: #000000 !important;
+  border-color: $whiteBorder;
+  span {
+    color: #000000 !important;
+  }
+}
+.fixed-bottom{
+  position: fixed;
+  bottom: 20px;
+  right: 0;
+}
+// adminlte的样式修改
+.main-header{
+  .logo{
+    width: 180px !important;
+  };
+  .navbar{
+    margin-left: 180px !important;
+  }
+}
+.navbar{
+  margin-bottom: 0px !important;
+}
+.main-sidebar{
+  width: 180px !important;
+}
+#app .sidebar-container{
+  top: 50px !important;
+}
+// adminLTE样式修改
+.main-header .navbar-custom-menu{
+  float: right !important;
+}
+.main-header .logo{
+  height: 50px !important;
+  line-height: 50px !important;
+  border-bottom: 0px !important;
+}
+.main-header .navbar-custom-menu{
+  border-bottom: 0px !important;
+}
+.user.user-menu{
+  border-bottom: 0px !important;
+}
+.navbar-nav > li.messages-menu, .user span{
+  float: left !important;
+}
+.nav.navbar-nav{
+  margin-top: 9px;
+}
+// dialog样式
+.minWidth{
+  min-width: 960px;
+}
+.inputWidth{ // 这个在表单验证中，input不是必填设置的
+  width: calc(100% - 100px);
+}

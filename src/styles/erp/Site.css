@@ -1,0 +1,520 @@
+﻿body {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    font-family:Helvetica, Arial, "微软雅黑", "Microsoft Yahei", sans-serif;
+}
+
+[v-cloak] {
+  display:none !important;
+}
+
+/* H1 - H6 font */
+span.modal-title {
+    font-family: Helvetica, Arial, "微软雅黑", "Microsoft Yahei", sans-serif;
+    font-size: 16px;
+}
+
+.modal {
+    background: rgba(0, 0, 0, 0);
+}
+.modal-body {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    /* padding-left: 15px;
+    padding-right: 15px;*/
+}
+
+/* Override the default bootstrap behavior where horizontal description lists
+   will truncate terms that are too long to fit in the left column
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+/*input,
+select,
+textarea {
+    max-width: 280px;
+}
+*/
+.form-group input[type=button] {
+    margin-right: 5px;
+}
+.row .form-group input[type=button]{
+    /*padding: 3px 18px;
+    font-size: 15px;*/
+}
+.hgp-btn input[type=button]{
+    margin-right: 10px;
+    min-width: 66px;
+}
+.btn-group {
+    margin-right: 10px;
+}
+.myprint {
+    display:inline-block;
+    position:relative;
+    width: 96px;
+    margin-right:10px;
+    }
+.myprint .print-title{
+    width: 100px;
+}
+        /*.myprint:hover .print-way {
+        display:block !important;
+        }*/
+        .myprint input {
+        width:100%;
+
+        }
+
+    .print-way input {
+      border-bottom: 1px solid #efefef;
+      border-radius:0!important;
+    }
+        .myprint .print-way {
+        position:absolute;
+        top:-75px;
+        left:0;
+        z-index:3;
+        }
+.sidebar-menu .treeview-menu li {
+    padding-left: 20px;
+}
+
+    .sidebar-menu .treeview-menu li a {
+        font-size: 12px;
+    }
+
+.form-group label.required:after {
+    content: ' *';
+    color: red;
+}
+
+.minus-rate {
+    color: red;
+}
+
+.red-text {
+    color: red;
+}
+
+.blue-text {
+    color: blue;
+}
+
+.input-group-addon {
+    padding: 1px 5px;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1;
+    color: #555;
+    text-align: center;
+    background-color: #eee;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.table-hover > tbody > tr:hover {
+    background-color: #c8d8a0;
+    cursor: pointer;
+}
+
+.table > tbody > tr.row_selected {
+    background-color: #abb9d3;
+}
+/*库存为负数 行 报警颜色*/
+.row_inventory_qty_warnring {
+    color: red;
+}
+
+
+/*
+*包装方式样式
+*/
+/*._btn-package {*/
+    /*display: block;*/
+    /*width: 16px;*/
+    /*height: 16px;*/
+    /*line-height: 16px;*/
+    /*background: url(../img/package.png) no-repeat;*/
+/*}*/
+
+/*.btn-area {*/
+    /*display: inline-block;*/
+    /*width: 16px;*/
+    /*height: 16px;*/
+    /*line-height: 16px;*/
+    /*background: url(../img/area.png) no-repeat;*/
+    /*background-size: 16px;*/
+    /*height: 16px;*/
+/*}*/
+
+/*.btn-refresh {*/
+    /*display: block;*/
+    /*width: 16px;*/
+    /*height: 16px;*/
+    /*line-height: 16px;*/
+    /*background: url(../img/refresh.png) no-repeat;*/
+    /*background-size: 16px;*/
+    /*height: 16px;*/
+/*}*/
+
+/*
+*表格左侧每页显示数量控制下拉列表样式
+*/
+div.dataTables_length select {
+    height: 22px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+/*
+*表格右侧列控制按钮样式
+*/
+div.columnsCtl .btn {
+    padding-top: 2px;
+    padding-bottom: 1px;
+}
+
+.columnsCtl {
+    padding-top: 7px;
+    font-size: 12px;
+    text-align:right;
+}
+.columnsCtl .open .colContainer {
+        background: gainsboro;
+}
+.sums {
+    margin-right: 26px;
+    padding-top: 5px;
+}
+.sumpage {
+    float: right;
+}
+    .columnsCtl .open > .dropdown-menu{
+        font-size: 12px;
+        left:0;
+    }
+
+.box-white {
+    position: relative;
+    border-radius: 3px;
+    background: #ffffff;
+    margin-bottom: 20px;
+    width: 100%;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+
+.xwwwx-tab-card {
+    border: 1px solid #e2e2e2;
+    border-radius: 2px;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.1);
+}
+
+.xwwwx-tab {
+    border-bottom: 1px solid #e2e2e2;
+    overflow: hidden;
+    text-align: left !important;
+}
+
+.xwwwx-tab-title {
+    padding-left: 0px;
+    position: relative;
+    height: 30px;
+    white-space: nowrap;
+    font-size: 0;
+    border-bottom: 1px solid #e2e2e2;
+    background-color: #fff;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    left: 0px;
+}
+
+
+
+.xwwwx-tab-content {
+    display: block;
+    border-left: 1px solid #e2e2e2;
+    border-right: 1px solid #e2e2e2;
+}
+
+.xwwwx-tab-item {
+    display: none;
+    padding-top: 20px;
+}
+
+.xwwwx-tab-title li {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 12px;
+    position: relative;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    min-width: 120px;
+    border-radius: 5px 5px 0 0;
+    /*width: 120px;*/
+    float: left;
+    border: 1px solid #e2e2e2;
+    border-right:none;
+    -webkit-box-sizing: border-box !important;
+    -moz-box-sizing: border-box !important;
+    box-sizing: border-box !important;
+    background-color: #f9f9f9;
+    display: block;
+    cursor: pointer;
+}
+    .xwwwx-tab-title li:last-child {
+    border-right: 1px solid #e2e2e2;
+    }
+    .xwwwx-tab-title li label {
+        cursor: pointer;
+         font-size: 12px;
+         font-weight:normal;
+        color:#666;
+    }
+    .xwwwx-tab-title li a {
+        color: #000;
+        cursor: pointer;
+    }
+
+li.xwwwx-this {
+    line-height: 30px;
+    height: 30px;
+    border-bottom: 0px solid #fff;
+    background-color: #fff;
+    color:#72afd2;
+}
+li.xwwwx-this label {
+
+    font-weight:bold;
+    }
+
+.xwwwx-show {
+    display: block;
+    background-color: #fff;
+}
+
+.clear-border {
+    border: 0px solid #fff;
+}
+
+.xwwwx-form-control {
+    width: 90%;
+}
+
+.xwwwx-footer-fixed {
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    background-color: #fff;
+    min-height: 40px;
+    z-index:1000;
+    left:0;
+}
+/*.xwwwx-footer-fixed >div{
+    padding-bottom: 10px;
+}*/
+.xwwwx-fixed-top {
+ /*margin-bottom:40px;*/
+}
+
+.xwwwx-drop-btn {
+    font-size:12px;height:25px;line-height:25px;padding: 2px 3px;
+    color:#000;
+}
+
+
+ .sort-container {
+        width: 100%;
+        height: auto;
+        border: 1px solid #ccc;
+        float: left;
+    }
+
+        .sort-container ul {
+            width: 100%;
+              height: auto;
+            float: left;
+        }
+
+            .sort-container ul li {
+                text-decoration: none;
+                list-style: none;
+                float: left;
+                width: 120px;
+                height: 50px;
+            }
+
+    .sort-item {
+        margin: 10px;
+        border: 1px solid #ccc;
+        cursor:pointer;
+        text-align:center;
+        background-color:#faece2;
+    }
+
+
+    /*.btn-print-16 {*/
+    /*display: block;*/
+    /*width: 16px;*/
+    /*height: 16px;*/
+    /*line-height: 16px;*/
+    /*background: url(../img/print.png) no-repeat;*/
+    /*background-size: 16px;*/
+    /*margin:0 auto;*/
+/*}*/
+
+         /*.btn-print-24 {*/
+    /*display: block;*/
+    /*width: 24px;*/
+    /*height: 24px;*/
+    /*line-height: 24px;*/
+    /*background: url(../img/print.png) no-repeat;*/
+    /*background-size: 24px;*/
+    /*margin:0 auto;*/
+/*}*/
+
+
+.table-label {
+font-weight:normal;
+}
+
+
+.dataTables_scrollBody {
+margin-bottom:20px;
+}
+.box-style {
+    width:80px;border: 0;outline: 0;background:#fff;
+}
+.table-hover > tbody > tr:hover .box-style {
+       background-color: #c8d8a0;
+}
+.table > tbody > tr.row_selected .box-style {
+    background-color: #abb9d3;
+}
+
+.tab-container .box-body{
+    padding-top:0;
+}
+.tab-container .xwwwx-footer-fixed >div{
+    padding-left:12px;
+}
+
+.sel-table td {
+vertical-align:middle !important;
+}
+/**/
+   .table-tab {
+        background-color: #fff;
+        border-bottom: 1px solid #BCD5E6;
+        position: relative;
+        overflow: hidden;
+        height: 28px;
+        margin-bottom: 10px;
+    }
+   .table-tab ul {
+        position: absolute;
+        left: 0;
+        top: 0;
+        padding: 0 0 0 2px;
+        margin: 0;
+        width: 5000px;
+        height: 28px;
+    }
+    .table-tab ul li {
+        float: left;
+        position: relative;
+        cursor: default;
+        padding-left: 7px;
+        box-sizing: border-box;
+        white-space: nowrap;
+        height: 28px;
+        line-height: 28px;
+        width: 130px;
+        text-align: center;
+        list-style: none;
+    }
+   .table-tab ul li.tab-selected{
+    background: #BCD5E6;
+    color: #000;
+}
+     @media (min-width: 992px){
+         .rowRange div.col-md-1{
+        width:12.8%;
+    }
+        .my-ml {
+         margin-left: 0px;
+        }
+         .saleWidth{
+        overflow: hidden;
+    }
+          .rowRange div.col-md-2{
+        width:32.7%;
+        margin-right:2px;
+    }
+          .rowRange label.col-md-1{
+        width:7.1%;
+        padding-left: 0;
+    }
+                .rowRange label.col-md-1.frysty{
+           width: 6.91%;
+    }
+        .remark.col-md-11 {
+            width: 89.9%;
+        }
+    }
+      @media (min-width: 1200px){
+          .rowRange div.col-md-1{
+            width:12.8%;
+    }
+           .my-ml {
+         margin-left:-4px;
+        }
+   .saleWidth {
+        overflow: hidden;
+        /*width: 74% !important;*/
+    }
+
+           /*.salesman .select2-container{
+    width:89.1%!important;
+
+    }*/
+        .select2-container--default .select2-selection--single {
+
+        }
+
+           .test {
+    float: left;
+    width: .2%;
+    height: 1px;
+    }
+           .rowRange div.col-md-2{
+        width:31.6%;
+        margin-right: 0px;
+    }
+           .rowRange label.col-md-1{
+        width:6%;
+    }
+             .rowRange label.col-md-1.frysty{
+       width: 5.8%;
+    }
+      .remark.col-lg-11 {
+        width: 90.8%;
+    }
+    }
+      @media (max-width: 991px) and (min-width: 600px){
+          .col-md-2 {
+            width: 100%;
+        }
+      }
+
+      .tbrowrightbutton:hover{
+          color:#fff !important;
+      }

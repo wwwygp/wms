@@ -1,0 +1,18 @@
+.automatic{
+  padding: 0px 20px;
+  .el-footer {
+    line-height: 60px;
+    background: #fff;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    z-index: 5;
+    padding: 0;
+  }
+  .el-button-group{
+    margin-top:10px;
+  }
+  .el-button-group .el-button:not(:last-child){
+    margin:0 10px;
+  }
+}

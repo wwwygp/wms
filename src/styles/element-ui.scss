@@ -1,0 +1,471 @@
+ //覆盖一些element-ui样式
+ .el-row {
+   margin-bottom: 8px;
+ }
+
+ .el-breadcrumb__inner,
+ .el-breadcrumb__inner a {
+   font-weight: 400 !important;
+ }
+
+ .el-upload {
+   input[type="file"] {
+     display: none !important;
+   }
+ }
+
+ .el-upload__input {
+   display: none;
+ }
+
+ .cell {
+   .el-tag {
+     margin-right: 0px;
+   }
+ }
+
+ .small-padding {
+   .cell {
+     padding-left: 5px;
+     padding-right: 5px;
+   }
+ }
+
+ .fixed-width {
+   .el-button--mini {
+     padding: 7px 10px;
+     width: 60px;
+   }
+ }
+
+ .status-col {
+   .cell {
+     padding: 0 10px;
+     text-align: center;
+
+     .el-tag {
+       margin-right: 0px;
+     }
+   }
+ }
+
+ //暂时性解决dialog 问题 https://github.com/ElemeFE/element/issues/2461
+ .el-dialog {
+   transform: none;
+   left: 0;
+   position: relative;
+   margin: 0 auto;
+ }
+
+ //文章页textarea修改样式
+ .article-textarea {
+   textarea {
+     padding-right: 40px;
+     resize: none;
+     border: none;
+     border-radius: 0px;
+     border-bottom: 1px solid #bfcbd9;
+   }
+ }
+
+ //element ui upload
+ .upload-container {
+   .el-upload {
+     width: 100%;
+
+     .el-upload-dragger {
+       width: 100%;
+       height: 200px;
+     }
+   }
+ }
+
+ //dropdown
+ .el-dropdown-menu {
+   a {
+     display: block
+   }
+ }
+
+ // table
+ .el-table {
+   thead {
+     color: #333 !important;
+   }
+
+   th {
+     padding: 0 !important;
+     background-color: #f1f1f1 !important;
+   }
+ }
+
+ .el-table--border td,
+ .el-table--border th,
+ .el-table__body-wrapper .el-table--border.is-scrolling-left~.el-table__fixed {
+   border-right: 1px solid #ddd !important;
+ }
+
+ .el-table--border,
+ .el-table--group {
+   border: 1px solid #ddd !important;
+ }
+
+ .el-table td,
+ .el-table th.is-leaf {
+   border-bottom: 1px solid #ddd !important;
+ }
+ .el-button--mini,
+ .el-button--mini.is-round {
+   padding: 4px 12px;
+   border-radius: 0;
+ }
+
+ .el-button {
+   //color: #fff;
+ }
+
+ .dialog-footer {
+   button:hover {
+     color: #fff;
+   }
+
+   span:hover {
+     color: #fff;
+   }
+ }
+
+ .el-button--primary {
+   border-color: #367fa9 !important;
+ }
+
+ .el-button--danger {
+   border-color: #dd6161 !important;
+ }
+
+ // 分页样式
+ .el-pagination__total {
+   position: absolute;
+   left: 20px;
+ }
+
+ .el-pagination {
+   position: relative;
+
+   .btn-next,
+   .btn-prev {
+     border: 1px solid #ddd;
+
+     span {
+       padding: 0px 11px;
+     }
+   }
+
+   .btn-prev {
+     border-top-left-radius: 4px !important;
+     border-bottom-left-radius: 4px !important;
+
+   }
+
+   .btn-next {
+     border-top-right-radius: 4px !important;
+     border-bottom-right-radius: 4px !important;
+   }
+ }
+
+ .el-pagination.is-background .btn-next,
+ .el-pagination.is-background .btn-prev,
+ .el-pagination.is-background .el-pager li {
+   background-color: #fff;
+   margin: 0;
+   border-radius: 0;
+ }
+
+ .el-pager {
+   height: 25px;
+   line-height: 25px;
+   border: 1px solid #ddd;
+   border-left: 0;
+   border-right: 0;
+ }
+
+ .el-pagination.is-background .el-pager li:not(.disabled).active {
+   background-color: #337ab7;
+   height: 25px;
+   line-height: 25px;
+  border: 1px solid #ddd;
+ }
+.el-pagination.is-background .btn-next, .el-pagination.is-background .btn-prev, .el-pagination.is-background .el-pager li{
+    background-color: #fff;
+    margin: 0;
+    border-radius: 0;
+    height: 25px;
+    border: 1px solid #ddd;
+    line-height: 25px;
+    background: #fafafa;
+}
+ .el-input--mini .el-input__inner,
+ .el-pagination button {
+   height: 25px;
+   line-height: 25px;
+ }
+
+ .el-pagination__editor.el-input .el-input__inner {
+   height: 25px;
+ }
+
+ .el-pager li {
+   height: 29px;
+   line-height: 29px;
+ }
+
+ .el-pagination button,
+ .el-pagination span:not([class*=suffix]) {
+   height: 25px;
+   line-height: 25px;
+ }
+
+ //选择器样式
+ .el-select .el-tag {
+   margin: 2px 0 2px 2px;
+   background-color: #fff;
+   border: 1px solid #D2D6DE;
+ }
+
+ .el-select .el-tag__close.el-icon-close {
+   background-color: #fff;
+   color: #333;
+ }
+
+ .el-select-dropdown.is-multiple .el-select-dropdown__item.selected {
+   background-color: #abb9d3;
+   color: #000;
+ }
+
+ .el-select-dropdown__item.selected {
+   background-color: #abb9d3;
+   color: #000;
+   font-weight: 100;
+ }
+
+ .el-select-dropdown__item.hover,
+ .el-select-dropdown__item:hover {
+   background-color: #1e90ff;
+ }
+
+ .el-select-dropdown.is-multiple .el-select-dropdown__item.selected.hover {
+   background-color: #abb9d3;
+ }
+
+ .el-select-dropdown.is-multiple .el-select-dropdown__item.selected::after {
+   content: "";
+ }
+
+.el-select.el-select--mini {
+  .el-select__tags {
+    max-width: 208px !important;
+    -webkit-transform: unset !important;
+    transform: unset !important;
+    top: 0 !important;
+  }
+}
+ .el-popper[x-placement^=bottom] {
+   margin-top: 0px;
+ }
+
+ .el-popper .popper__arrow,
+ .el-popper .popper__arrow::after {
+   border-style: hidden;
+ }
+
+ //表单样式
+ .el-form-item {
+   label {
+     width: 100px;
+     margin-bottom: 0px;
+   }
+
+   .el-select {
+     .el-input {
+       height: 26px !important;
+       width: 100%;
+       margin: 0;
+     }
+   }
+ }
+
+ .el-form-item--mini.el-form-item,
+ .el-form-item--small.el-form-item {
+   margin-bottom: 0px;
+ }
+
+ .el-form-item__error {
+   color: #f56c6c;
+   font-size: 10px;
+   -webkit-transform: scale(0.8);
+   line-height: 1;
+   position: absolute;
+   top: 100%;
+   right: -10px !important;
+   white-space: nowrap;
+   overflow: hidden;
+   margin-top: -21px;
+   width: 120px;
+   left: unset;
+ }
+
+ .el-message-box__input input.invalid:focus {
+   padding-right: 100px;
+ }
+
+ .is-error {
+   .el-form-item__content .el-input--mini .el-input__inner {
+     padding-right: 100px;
+   }
+
+   .el-select {
+     width: calc(100% - 100px);
+
+     .el-input {
+       height: 26px !important;
+       width: 100%;
+       margin: 0;
+     }
+   }
+   .el-input {
+     width: calc(100% - 100px);
+
+     input {
+       height: 26px !important;
+     }
+   }
+ }
+ .is-required {
+   .el-select {
+     width: calc(100% - 100px);
+
+     .el-input {
+       height: 26px !important;
+       width: 100%;
+       margin: 0;
+     }
+   }
+   .el-input {
+     width: calc(100% - 100px);
+
+     input {
+       height: 26px !important;
+     }
+   }
+ }
+
+ .el-form-item__content .el-input--mini .el-input__inner {
+   height: 26px;
+   line-height: 26px;
+   border-radius: 0px;
+ }
+
+ .el-form-item__content .el-button--primary {
+   background-color: #3c8dbc;
+   border-radius: 3px;
+   border-color: #367fa9;
+   height: 25px;
+ }
+
+ .el-form-item__label {
+   font-size: 12px;
+ }
+
+ .el-form-item--mini .el-form-item__error {
+   text-align: right;
+ }
+
+ .el-table__body tr.hover-row>td {
+   background-color: #c8d8a0 !important;
+ }
+
+ .el-date-picker__header {
+   background-color: #009F95;
+   margin: 0;
+   padding: 12px;
+
+   .el-picker-panel__icon-btn,
+   span {
+     color: #fff;
+   }
+ }
+ .el-date-range-picker__time-header {
+    background-color: #009F95;
+ }
+ .el-date-table td.end-date span, .el-date-table td.start-date span {
+  background-color: #009F95;
+ }
+
+ .el-date-table td.today div {
+   span {
+     color: #fff;
+   }
+
+   background-color: #009F95;
+   border-radius: 0;
+ }
+
+ .el-date-table td div:hover {
+   background-color: #009F95;
+   color: #fff;
+ }
+
+ .el-date-picker__header-label:hover {
+   color: #fff;
+ }
+
+ .el-date-table td.current:not(.disabled) span {
+   background-color: #009F95;
+ }
+
+ .el-input--mini .el-input__icon {
+   line-height: 26px !important;
+ }
+
+ //  表格
+ table tbody tr {
+   height: 21px;
+   line-height: 21px;
+ }
+
+ .el-table .cell {
+   line-height: 21px;
+ }
+
+ .el-table--mini td,
+ .el-table td {
+   padding: 0 !important;
+ }
+
+ .cell label {
+   margin-bottom: 0;
+ }
+
+ .el-popup-parent--hidden {
+   padding-right: 0 !important;
+ }
+
+ ;
+
+ // 下拉框样式
+ .el-input--suffix .el-input__inner {
+   padding-right: 15px;
+ }
+
+ //tab高度
+ .el-tabs__item {
+   height: 27px;
+   line-height: 27px;
+ }
+
+ //整体样式，主体距离顶部
+ .el-card__body {
+   padding: 10px 20px;
+ }
+body .el-table th.gutter{
+    display: table-cell!important;
+}

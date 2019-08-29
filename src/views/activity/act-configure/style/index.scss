@@ -1,0 +1,139 @@
+.form-config{
+    .el-form-item{
+        width:100%;
+    }
+    .el-form-item__content{
+        width:79%;
+    }
+    .el-form-item__label{
+        width:120px;
+    }
+    .cofing-explain{
+        color:#C0C4CC;
+    }
+    .time-pick{
+        width: 50%;
+        vertical-align: middle;
+        margin-right: 215px;
+        .el-radio__label{
+            display: inline-block;
+        }
+    }
+    .el-input .el-input__count .el-input__count-inner{
+        background: initial;
+    }
+    .seat-place{
+        padding-left: 25px;
+        box-align:border-box;
+    }
+   
+    .marketing-setup,.set-winner{
+        .el-input{
+            width:150px;
+        }
+        .el-input__inner{
+            text-align: center;
+        }
+        .winner-select .el-input__inner{
+            text-align: left;
+        }
+    }
+    .addWinner{
+        .el-form-item__content{
+            width:initial;
+            vertical-align: middle;
+        }
+    
+    }
+    .winning-rate {
+        width: initial;
+        p{
+            background:rgba(255, 242, 241, 1);
+            box-sizing: border-box;
+            border-width: 1px;
+            border-style: solid;
+            border-color: rgba(255, 242, 241, 1);
+            border-radius: 4px;
+            -moz-box-shadow: none;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+            color: #CCCCCC;
+            white-space: normal;
+            padding: 5px;
+        }
+    }
+    .el-form-item__error {
+        text-align: left;
+        white-space: initial;
+    }
+  
+} 
+ .prizeDialog{
+    .el-form-item{
+        width:100%;
+    }
+    .el-form-item__content{
+        width:80%;
+    }
+        label.el-radio {
+            width: 55px;
+        }
+        .el-radio-group label{
+            width:127px;
+        }
+        .el-select{
+            width:100%;
+        }
+        .el-select.style-select{
+            width: 42%;
+            .el-input.el-input--mini {
+                width: 89%;
+            }
+        }
+ }
+ .uploadImg{
+    .el-upload {
+        border: 1px dashed #d9d9d9;
+        border-radius: 6px;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+        vertical-align: middle;
+        margin-right: 4px;
+      }
+      .el-upload:hover {
+        border-color: #409EFF;
+      }
+      .avatar-uploader-icon {
+        font-size: 28px;
+        color: #8c939d;
+        width: 96px;
+        height: 96px;
+        line-height: 96px;
+        text-align: center;
+      }
+      .avatar {
+        width: 96px;
+        height: 96px;
+        display: block;
+      }
+  
+}
+.set-prizeDialog{
+    .el-form-item .el-select .el-input {
+        width: 87%;
+    }
+    .el-input {
+        width: 87%;
+    }
+    .cofing-explain{
+        display: inline-block;
+        position: absolute;
+        line-height: 1;
+        top: 20%;
+        margin-left: 5px;
+        font-size: 12px;
+        color: #aaa;
+    }
+}
+

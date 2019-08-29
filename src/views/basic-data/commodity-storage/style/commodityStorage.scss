@@ -1,0 +1,16 @@
+.case-floor-amount-label{
+  .el-form-item__label {
+    width: 150px;
+  }
+  .is-required .el-select,.el-input {
+    width: calc(100% - 150px);
+  }
+}
+.floor-amount-label{
+  .el-form-item__label {
+    width: 130px;
+  }
+  .is-required .el-select,.el-input {
+    width: calc(100% - 130px);
+  }
+}

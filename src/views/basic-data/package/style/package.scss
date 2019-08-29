@@ -1,0 +1,28 @@
+.case-floor-amount-label{
+  .el-form-item__label {
+    width: 145px;
+  }
+  .is-required .el-select,.el-input {
+    width: calc(100% - 145px);
+  }
+}
+.floor-amount-label{
+  .el-form-item__label {
+    width: 125px;
+  }
+  .is-required .el-select,.el-input {
+    width: calc(100% - 125px);
+  }
+}
+#top-form {
+  .el-date-editor.el-input, .el-date-editor.el-input__inner {
+    width: 290px !important;
+    padding: 0px !important;
+  }
+  .el-date-editor .el-range-separator {
+    padding: 0;
+  }
+  .el-form-item label {
+    width: 70px
+  }
+}

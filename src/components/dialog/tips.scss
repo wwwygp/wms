@@ -1,0 +1,15 @@
+// 弹出框样式
+#tipsDialog{
+  .el-dialog__header{
+    background: #4476A7;
+    text-align: left;
+    span{
+      color: #fff;
+      font-size: 14px;
+    }
+  }
+  .el-dialog--center .el-dialog__footer{
+    text-align: right;
+  }
+}
+

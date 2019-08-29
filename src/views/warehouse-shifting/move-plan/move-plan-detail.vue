@@ -1,0 +1,248 @@
+<template>
+  <el-card style="height: calc(100vh);overflow: auto">
+    <el-row id="move-plan-detail-form">
+      <el-form :inline="true" :model="formInline">
+        <el-row>
+          <el-col :span="6">
+            <el-form-item label="移库计划单号">
+              <el-input v-model="formInline.movePlanCode" disabled></el-input>
+            </el-form-item>
+          </el-col>
+          <el-col :span="6">
+            <el-form-item label="状态">
+              <el-input v-model="formInline.statusName" disabled></el-input>
+            </el-form-item>
+          </el-col>
+          <el-col :span="6">
+            <el-form-item label="创建人">
+              <el-input v-model="formInline.createrName" disabled></el-input>
+            </el-form-item>
+          </el-col>
+          <el-col :span="6">
+            <el-form-item label="创建时间">
+              <el-input v-model="formInline.createTime" disabled></el-input>
+            </el-form-item>
+          </el-col>
+        </el-row>
+        <el-row>
+          <el-col :span="12" class="remark-width">
+            <el-form-item label="备注" style="width: 100%;">
+              <el-input v-model="formInline.remark" disabled></el-input>
+            </el-form-item> 
+          </el-col>
+        </el-row>
+      </el-form>
+    </el-row>
+    <el-row style='margin-top: -10px;'>
+      <table-configure
+        ref="tableConfig"
+        :data-table="dataTable"
+        :table-code="tableName"
+        @onHandleSelectionChange="onHandleSelectionChange"
+        @tableDataHandle="tableDataHandle"
+        @handleSizeChange="handleSizeChange"
+        @handleCurrentChange="handleCurrentChange"
+      >
+        <template slot-scope="props" slot="largePackageNumber">
+          <el-input v-model='props.obj.row.largePackageNumber' :disabled="formInline.status != 0 || (props.obj.row.largePackageCount == null || props.obj.row.largePackageCount == '')"></el-input>
+        </template>
+        <template slot-scope="props" slot="mediumPackageNumber">
+          <el-input v-model='props.obj.row.mediumPackageNumber' :disabled="formInline.status != 0 || (props.obj.row.mediumPackageCount == null || props.obj.row.mediumPackageCount == '')"></el-input>
+        </template>
+        <template slot-scope="props" slot="smallPackageNumber">
+          <el-input v-model='props.obj.row.smallPackageNumber' :disabled="formInline.status != 0 || (props.obj.row.smallPackageCount == null || props.obj.row.smallPackageCount == '')"></el-input>
+        </template>
+        <template slot-scope="props" slot="dstSpaceCode">
+          <el-select v-model="props.obj.row.dstSpaceCode" placeholder="请选择" filterable clearable v-loadmore="mainTableSpaceMore" remote :remote-method="searchMainTableSpace" @focus="focusMainTableSpace" @clear="clearMainTableSpace" @change="changeMainTableSpace" :disabled="formInline.status != 0">
+              <el-option
+                v-for="item in mainTableSpaceArr.data"
+                :key="item.spaceCode"
+                :label="item.spaceCode"
+                :value="item.spaceCode">
+              </el-option>
+            </el-select>
+        </template>
+      </table-configure>
+    </el-row>
+    <el-row>
+      <el-col :span="24">
+        <div class="btn-box" style="text-align: left;">
+          <el-button
+            v-if="formInline.status == 0"
+            v-db-click
+            v-for="(v,index) in btnList"
+            :class="v.className"
+            :key="index" @click="extendFn(v)"
+            :type="filteType(v.className)"
+          >
+            {{v.name}}
+          </el-button>
+          <el-button
+            v-db-click
+            class="blue"
+            @click="back"
+            :type="filteType('blue')"
+          >
+            返回
+          </el-button>
+        </div>
+      </el-col>
+    </el-row>
+    <self-dialog
+      :visible.sync="dialogCommodityVisible"
+      width="50%"
+      custom-class="minWidth tableConfigDialog"
+      :title="commodityTitle"
+      :modal-append-to-body="false"
+      :before-close="closeCommodityDialog"
+      :close-on-click-modal="false"
+    >
+      <!--是否保存数据-->
+      <tips-dialog :parent-data="isSaveCommodityDialog" @handleOkTip="cancel"></tips-dialog>
+      <el-form :inline="true" :model="form">
+        <el-row>
+          <el-col :span="8">
+            <el-form-item label="商品名称">
+              <el-input v-model="form.commodityName"></el-input>
+            </el-form-item>
+          </el-col>
+          <el-col :span="8">
+            <el-form-item label="委托业主">
+              <el-select v-model="form.ownerId" placeholder="请选择" v-loadmore="ownersMore" filterable clearable >
+                <el-option
+                  v-for="item in ownersArr.data" 
+                  :key="item.id" 
+                  :label="item.name" 
+                  :value="item.id">
+                </el-option>
+              </el-select>
+            </el-form-item>
+          </el-col>
+          <el-col :span="8">
+            <el-form-item label="储位编码">
+              <el-select v-model="form.spaceId" placeholder="请选择" filterable clearable v-loadmore="spaceMore" remote :remote-method="searchSpace" @focus="focusSpace" @clear="clearSpace" @change="changeSpace">
+              <el-option
+                v-for="item in spaceArr.data"
+                :key="item.spaceId"
+                :label="item.spaceCode"
+                :value="item.spaceId">
+              </el-option>
+            </el-select>
+            </el-form-item>
+          </el-col>
+        </el-row>
+        <el-row>
+          <el-col :span="8">
+            <el-form-item label="标准">
+              <el-select v-model="form.standardId" placeholder="请选择" v-loadmore="loadMoreStandardList" filterable clearable >
+                <el-option
+                  v-for="item in standardPageDate.data"
+                  :key="item.dictDtlValue"
+                  :label="item.dictDtlName"
+                  :value="item.dictDtlValue">
+                </el-option>
+              </el-select>
+            </el-form-item>
+          </el-col>
+          <el-col :span="8">
+            <el-form-item label="规格">
+              <el-input v-model="form.specification"></el-input>
+            </el-form-item>
+          </el-col>
+          <el-col :span="8">
+            <el-form-item label="表色">
+              <el-select v-model="form.surfaceTreatmentId" remote filterable clearable placeholder="请选择" v-loadmore="loadMoreSurfaceTreatmentList" :remote-method="searchFastenerSurfaceTreatment" @focus="initSurfaceTreatmentList" @clear="clearSurfaceTreatment" @change="changeSurfaceTreatment">
+                <el-option
+                  v-for="item in surfaceTreatmentArr.data"
+                  :key="item.dictDtlValue"
+                  :label="item.dictDtlName"
+                  :value="item.dictDtlValue">
+                </el-option>
+              </el-select>
+            </el-form-item>
+          </el-col>
+        </el-row>
+        <el-row>
+          <el-col :span="12">
+            <el-form-item label="品牌">
+              <el-select v-model="form.brandId" placeholder="请选择" v-loadmore="loadMoreBrandsList" filterable clearable >
+                <el-option
+                  v-for="item in brandPageDate.data"
+                  :key="item.ID"
+                  :label="item.Brand_Name"
+                  :value="item.ID">
+                </el-option>
+              </el-select>
+            </el-form-item>
+          </el-col>
+          <el-col :span="12">
+            <div class="btn-box" style="text-align: right;">
+              <el-button type="primary" class='blue' @click="searchCommodityList">查询</el-button>
+              <el-button type="primary" class='blue' @click="resetCommodityList">重置</el-button>
+            </div>
+          </el-col>
+        </el-row>
+      </el-form>
+      <table-configure
+        v-if="dialogCommodityVisible"
+        ref="tableConfigDialog"
+        :data-table="dataTableDialog"
+        :table-code="tableNameDialog"
+        @onHandleSelectionChange="onHandleSelectionChangeDialog"
+        @tableDataHandle="tableDataHandleDialog"
+        @handleSizeChange="handleSizeChangeDialog"
+        @handleCurrentChange="handleCurrentChangeDialog"
+      >
+        <template slot-scope="props" slot="stayCol1">
+          <el-input v-model='props.obj.row.stayCol1'></el-input>
+        </template>
+        <template slot-scope="props" slot="stayCol2">
+          <el-select v-model="props.obj.row.stayCol2" placeholder="请选择" filterable clearable v-loadmore="tableSpaceMore" remote :remote-method="searchTableSpace" @focus="focusTableSpace" @clear="clearTableSpace" @change="changeTableSpace">
+              <el-option
+                v-for="item in tableSpaceArr.data"
+                :key="item.spaceId"
+                :label="item.spaceCode"
+                :value="item.spaceId">
+              </el-option>
+            </el-select>
+        </template>
+      </table-configure>
+      <span slot="footer" class="dialog-footer">
+        <el-button type="primary" @click="movePlanDtlSaveCommodity" class="blue" v-db-click>保 存</el-button>
+        <el-button  type="primary" class="blue" @click="resetCommodityForm">取 消</el-button>
+      </span>
+    </self-dialog>
+    <tips-dialog :parent-data="delDialog" @handleOkTip="removeRow"></tips-dialog>
+    <!--是否主档保存数据-->
+    <tips-dialog :parent-data="isMainSaveCommodityDialog" @handleOkTip="backMovePlan"></tips-dialog>
+  </el-card>
+</template>
+
+<script src="./js/move-plan-detail.js"></script>
+<style lang="scss">
+#move-plan-detail-form {
+  .el-date-editor.el-input, .el-date-editor.el-input__inner{
+    width: 80px !important;
+  }
+  .el-date-editor.el-input--suffix{
+    .el-input__inner {
+      padding-right: 0px;
+      padding-left: 15px;
+    }
+    .el-input__prefix{
+      left: 0px;
+    }
+    .el-input__icon{
+      width: 15px;
+    }
+  }
+  .remark-width {
+    .el-form-item__content {
+      width: calc(100% - 100px);
+    }
+  }
+}
+.v-modal {
+  z-index: 2000 !important;
+}
+</style>

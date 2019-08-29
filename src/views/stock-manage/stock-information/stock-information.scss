@@ -1,0 +1,16 @@
+.el-tabs__header{
+  margin:-1px 0;
+}
+.inventory{
+  .el-row {
+    margin-bottom: 10px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+}
+.el-button-group .el-button:not(:last-child){
+  margin:0 10px;
+}
+

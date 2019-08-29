@@ -1,0 +1,88 @@
+.act-manage {
+
+  .act-pops {
+    .el-col-12 {
+      padding: 30px 0 40px;
+    }
+  }
+
+
+
+
+  .add-activity {
+    padding: 10px;
+    border-radius: 4px;
+  }
+
+  .add-activity:hover {
+    background: #fff;
+    color: #606266dd;
+    border-color: #dcdfe6;
+  }
+
+}
+
+.act-pops {
+
+  .popper__arrow,
+  .popper__arrow::after {
+    border-style: inherit;
+  }
+
+  .el-select {
+    padding-top: 30px;
+  }
+
+  .pop-close {
+    position: absolute;
+    top: 5px;
+    right: -5px;
+  }
+
+  .set-up {
+    border-left: 1px solid #ddd;
+  }
+
+  .setup-btn {
+    width: 100%;
+    padding: 10px 0;
+    border-radius: 4px;
+    background: #fff;
+    border-color: #aaa;
+    color: #000;
+  }
+
+  .addBtn {
+    padding: 30px 22px;
+
+    p {
+      color: #aaa;
+      font-size: 12px;
+      line-height: 1;
+    }
+  }
+}
+
+.act-pops.el-popper[x-placement^=bottom] {
+  padding: 0 12px;
+  margin-top: 12px;
+}
+
+.checkDialog {
+  .el-dialog__body {
+    padding: 0;
+  }
+
+  .el-tabs__content {
+    padding: 0 20px;
+  }
+
+  .el-form {
+    margin:10px 0 -25px;
+    text-align: left;
+  }
+
+  .el-form-item label {
+    width: 60px;
+  }
+}
